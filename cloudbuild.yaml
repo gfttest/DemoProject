@@ -28,6 +28,9 @@
 steps:
 - id: 'Deploy application to cluster'
   name: 'gcr.io/k8s-skaffold/skaffold:v0.20.0'
+  logsBucket: 'gs://buildstorage'
+  options:
+    logging: GCS_ONLY
   entrypoint: 'bash'
   args:
   - '-c'
